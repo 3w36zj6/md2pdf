@@ -1,0 +1,6 @@
+#!/bin/sh
+
+SCRIPT_DIR=$(dirname $0)
+cd $(dirname $1)
+pandoc -F pandoc-crossref $(basename $1) -o report.docx --pdf-engine=lualatex -N
+cd -
